@@ -1,4 +1,4 @@
-import { traits, dreams, starSigns, advice } from "./database/personality.js";
+import { traits, dreams, advice } from "./database/personality.js";
 import { schoolExperience, studies, jobs } from "./database/occupation.js";
 import { hobbies, interests } from "./database/pastimes.js";
 import { familyMembers, residence } from "./database/livingSituation.js";
@@ -20,28 +20,7 @@ import getRandomName from "./utils/getRandomName.js";
 import getRandomSurname from "./utils/getRandomSurname.js";
 import getRandomPersonalityType from "./utils/getRandomPersonalityType.js";
 import getRandomStarSign from "./utils/getRandomStarSign.js";
-
-const getRandomStudies = () => {
-  const classicStudies = studies.classic;
-  const modernStudies = classicStudies.concat(studies.modern);
-  const randomClassicStudies =
-    classicStudies[Math.floor(Math.random() * classicStudies.length)];
-  const randomModernStudies =
-    modernStudies[Math.floor(Math.random() * modernStudies.length)];
-
-  const birthYear = getBirthYear();
-  const randomStudies = {
-    studies: "",
-    studyExperience:
-      studies.experience[Math.floor(Math.random() * studies.experience.length)],
-  };
-
-  if (birthYear < 1970) {
-    randomStudies.studies = randomClassicStudies;
-  } else randomStudies.studies = randomModernStudies;
-
-  return randomStudies;
-};
+import getRandomStudies from "./utils/getRandomStudies.js";
 
 const getRandomJob = () => {
   const birthYear = getBirthYear();
