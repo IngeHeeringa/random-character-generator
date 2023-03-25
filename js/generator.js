@@ -1,4 +1,3 @@
-import { namesUK, namesES, namesNL } from "./database/names.js";
 import {
   personalityTypes,
   traits,
@@ -25,33 +24,7 @@ import checkLifeStage from "./utils/checkLifeStage.js";
 import getRandomAge from "./utils/getRandomAge.js";
 import getBirthYear from "./utils/getBirthYear.js";
 import getRandomName from "./utils/getRandomName.js";
-
-const getRandomSurname = () => {
-  const charNationality = countryInput.value;
-  let randomSurname;
-
-  switch (charNationality) {
-    case "es":
-      randomSurname = [
-        namesES.surnames[Math.floor(Math.random() * namesES.surnames.length)],
-        namesES.surnames[Math.floor(Math.random() * namesES.surnames.length)],
-      ]
-        .toString()
-        .split(",")
-        .join(" ");
-      break;
-    case "nl":
-      randomSurname =
-        namesNL.surnames[Math.floor(Math.random() * namesNL.surnames.length)];
-      break;
-    case "uk":
-      randomSurname =
-        namesUK.surnames[Math.floor(Math.random() * namesUK.surnames.length)];
-      break;
-  }
-
-  return randomSurname;
-};
+import getRandomSurname from "./utils/getRandomSurname.js";
 
 const getRandomPersonalityType = () =>
   personalityTypes[Math.floor(Math.random() * personalityTypes.length)];
