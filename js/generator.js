@@ -1,4 +1,3 @@
-import { advice } from "./database/personality.js";
 import {
   genderInput,
   lifeStageInput,
@@ -25,8 +24,7 @@ import getRandomHobby from "./utils/getRandomHobby.js";
 import getRandomInterests from "./utils/getRandomInterests.js";
 import getRandomFamilyMembers from "./utils/getRandomFamilyMembers.js";
 import getRandomResidence from "./utils/getRandomResidence.js";
-
-const getRandomAdvice = () => advice[Math.floor(Math.random() * advice.length)];
+import getRandomAdvice from "./utils/getRandomAdvice.js";
 
 class Character {
   constructor(fullName, age, pronouns, personalityType, starSign) {
