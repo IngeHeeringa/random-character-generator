@@ -23,16 +23,7 @@ import {
 } from "./selectors.js";
 import checkGender from "./utils/checkGender.js";
 import checkLifeStage from "./utils/checkLifeStage.js";
-import getAgeRange from "./utils/getAgeRange.js";
-
-const getRandomAge = () => {
-  const ageRange = getAgeRange();
-  const randomAge = Math.floor(
-    Math.random() * (ageRange.max - ageRange.min) + ageRange.min
-  );
-
-  return randomAge;
-};
+import getRandomAge from "./utils/getRandomAge.js";
 
 const getBirthYear = () => {
   const randomAge = getRandomAge();
