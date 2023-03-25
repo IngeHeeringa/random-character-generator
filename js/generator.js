@@ -24,41 +24,7 @@ import getRandomCharacterTraits from "./utils/getRandomCharacterTraits.js";
 import getRandomDream from "./utils/getRandomDream.js";
 import getRandomHobby from "./utils/getRandomHobby.js";
 import getRandomInterests from "./utils/getRandomInterests.js";
-
-const getRandomFamilyMembers = () => {
-  const closeFamilyMembersMinor = familyMembers.close.minor;
-  const closeFamilyMembersAdult = familyMembers.close.adult.concat(
-    closeFamilyMembersMinor
-  );
-  const distantFamilyMembersMinor = familyMembers.distant.minor;
-  const distantFamilyMembersAdult = familyMembers.distant.adult.concat(
-    distantFamilyMembersMinor
-  );
-
-  const randomCloseFamilyMembers = {
-    minor:
-      closeFamilyMembersMinor[
-        Math.floor(Math.random() * closeFamilyMembersMinor.length)
-      ],
-    adult:
-      closeFamilyMembersAdult[
-        Math.floor(Math.random() * closeFamilyMembersAdult.length)
-      ],
-  };
-
-  const randomDistantFamilyMembers = {
-    minor:
-      distantFamilyMembersMinor[
-        Math.floor(Math.random() * distantFamilyMembersMinor.length)
-      ],
-    adult:
-      distantFamilyMembersAdult[
-        Math.floor(Math.random() * distantFamilyMembersAdult.length)
-      ],
-  };
-
-  return { randomCloseFamilyMembers, randomDistantFamilyMembers };
-};
+import getRandomFamilyMembers from "./utils/getRandomFamilyMembers.js";
 
 const getRandomResidence = () => {
   const randomAdjective =
