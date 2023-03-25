@@ -1,21 +1,14 @@
-import { namesUK, namesES, namesNL } from "../scripts/database/names.js";
+import { namesUK, namesES, namesNL } from "./database/names.js";
 import {
   personalityTypes,
   traits,
   dreams,
   starSigns,
   advice,
-} from "../scripts/database/personality.js";
-import {
-  schoolExperience,
-  studies,
-  jobs,
-} from "../scripts/database/occupation.js";
-import { hobbies, interests } from "../scripts/database/pastimes.js";
-import {
-  familyMembers,
-  residence,
-} from "../scripts/database/livingSituation.js";
+} from "./database/personality.js";
+import { schoolExperience, studies, jobs } from "./database/occupation.js";
+import { hobbies, interests } from "./database/pastimes.js";
+import { familyMembers, residence } from "./database/livingSituation.js";
 import {
   genderInput,
   lifeStageInput,
@@ -27,37 +20,8 @@ import {
   displayCharacterProfile,
   displayPersonalityType,
   displayStarSign,
-} from "../scripts/selectors.js";
-
-const checkGender = () => {
-  let gender;
-  let pronouns;
-
-  for (const genderButton of genderInput) {
-    if (genderButton.checked) {
-      gender = genderButton.value;
-      break;
-    }
-  }
-
-  gender === "male"
-    ? (pronouns = {
-        subject: "he",
-        subjectU: "He",
-        object: "him",
-        possessive: "his",
-        possessiveU: "His",
-      })
-    : (pronouns = {
-        subject: "she",
-        subjectU: "She",
-        object: "her",
-        possessive: "her",
-        possessiveU: "Her",
-      });
-
-  return { gender, pronouns };
-};
+} from "./selectors.js";
+import checkGender from "./utils/checkGender.js";
 
 const checkLifeStage = () => {
   let lifeStage;
