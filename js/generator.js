@@ -1,4 +1,4 @@
-import { traits, dreams, advice } from "./database/personality.js";
+import { advice } from "./database/personality.js";
 import { hobbies, interests } from "./database/pastimes.js";
 import { familyMembers, residence } from "./database/livingSituation.js";
 import {
@@ -23,14 +23,6 @@ import getRandomStudies from "./utils/getRandomStudies.js";
 import getRandomJob from "./utils/getRandomJob.js";
 import getRandomSchoolExperience from "./utils/getRandomSchoolExperience.js";
 import getRandomCharacterTraits from "./utils/getRandomCharacterTraits.js";
-
-const getRandomDream = () => dreams[Math.floor(Math.random() * dreams.length)];
-
-const getModernPastime = (pastime, lifeStage) =>
-  pastime.modern[lifeStage]
-    .concat(pastime.modern.general)
-    .concat(pastime.classic[lifeStage])
-    .concat(pastime.classic.general);
 
 const getRandomHobby = () => {
   const birthYear = getBirthYear();
