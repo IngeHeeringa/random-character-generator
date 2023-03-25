@@ -1,5 +1,5 @@
 import { traits, dreams, advice } from "./database/personality.js";
-import { schoolExperience, studies, jobs } from "./database/occupation.js";
+import { schoolExperience, jobs } from "./database/occupation.js";
 import { hobbies, interests } from "./database/pastimes.js";
 import { familyMembers, residence } from "./database/livingSituation.js";
 import {
@@ -21,38 +21,7 @@ import getRandomSurname from "./utils/getRandomSurname.js";
 import getRandomPersonalityType from "./utils/getRandomPersonalityType.js";
 import getRandomStarSign from "./utils/getRandomStarSign.js";
 import getRandomStudies from "./utils/getRandomStudies.js";
-
-const getRandomJob = () => {
-  const birthYear = getBirthYear();
-  const classicFullTimeJobs = jobs.classic.fullTimeJobs;
-  const classicSideJobs = jobs.classic.sideJobs;
-  const modernFullTimeJobs =
-    jobs.modern.fullTimeJobs.concat(classicFullTimeJobs);
-  const modernSideJobs = jobs.modern.sideJobs.concat(classicSideJobs);
-
-  const randomJob = {
-    fullTimeJob: "",
-    sideJob: "",
-    jobExperience:
-      jobs.experience[Math.floor(Math.random() * jobs.experience.length)],
-  };
-
-  if (birthYear < 1970) {
-    randomJob.fullTimeJob =
-      classicFullTimeJobs[
-        Math.floor(Math.random() * classicFullTimeJobs.length)
-      ];
-    randomJob.sideJob =
-      classicSideJobs[Math.floor(Math.random() * classicSideJobs.length)];
-  } else {
-    randomJob.fullTimeJob =
-      modernFullTimeJobs[Math.floor(Math.random() * modernFullTimeJobs.length)];
-    randomJob.sideJob =
-      modernSideJobs[Math.floor(Math.random() * modernSideJobs.length)];
-  }
-
-  return randomJob;
-};
+import getRandomJob from "./utils/getRandomJob.js";
 
 const getRandomSchoolExperience = () => {
   const birthYear = getBirthYear();
