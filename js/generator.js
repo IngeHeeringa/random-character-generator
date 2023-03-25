@@ -13,7 +13,6 @@ import {
   genderInput,
   lifeStageInput,
   countryInput,
-  storyYearInput,
   generateButton,
   displayCharacter,
   displayFullName,
@@ -24,107 +23,8 @@ import {
 import checkGender from "./utils/checkGender.js";
 import checkLifeStage from "./utils/checkLifeStage.js";
 import getRandomAge from "./utils/getRandomAge.js";
-
-const getBirthYear = () => {
-  const randomAge = getRandomAge();
-  const birthYear = storyYearInput.value - randomAge;
-
-  return birthYear;
-};
-
-const getNamesByDecade = (namesByNationalityAndGender) => {
-  const charBirthYear = getBirthYear();
-  let randomName;
-
-  if (charBirthYear < 1860) {
-    randomName =
-      namesByNationalityAndGender[1850][
-        Math.floor(Math.random() * namesByNationalityAndGender[1850].length)
-      ];
-  } else if (charBirthYear < 1870) {
-    randomName =
-      namesByNationalityAndGender[1860][
-        Math.floor(Math.random() * namesByNationalityAndGender[1860].length)
-      ];
-  } else if (charBirthYear < 1880) {
-    randomName =
-      namesByNationalityAndGender[1870][
-        Math.floor(Math.random() * namesByNationalityAndGender[1870].length)
-      ];
-  } else if (charBirthYear < 1890) {
-    randomName =
-      namesByNationalityAndGender[1880][
-        Math.floor(Math.random() * namesByNationalityAndGender[1880].length)
-      ];
-  } else if (charBirthYear < 1900) {
-    randomName =
-      namesByNationalityAndGender[1890][
-        Math.floor(Math.random() * namesByNationalityAndGender[1890].length)
-      ];
-  } else if (charBirthYear < 1910) {
-    randomName =
-      namesByNationalityAndGender[1900][
-        Math.floor(Math.random() * namesByNationalityAndGender[1900].length)
-      ];
-  } else if (charBirthYear < 1920) {
-    randomName =
-      namesByNationalityAndGender[1910][
-        Math.floor(Math.random() * namesByNationalityAndGender[1910].length)
-      ];
-  } else if (charBirthYear < 1930) {
-    randomName =
-      namesByNationalityAndGender[1920][
-        Math.floor(Math.random() * namesByNationalityAndGender[1920].length)
-      ];
-  } else if (charBirthYear < 1940) {
-    randomName =
-      namesByNationalityAndGender[1930][
-        Math.floor(Math.random() * namesByNationalityAndGender[1930].length)
-      ];
-  } else if (charBirthYear < 1950) {
-    randomName =
-      namesByNationalityAndGender[1940][
-        Math.floor(Math.random() * namesByNationalityAndGender[1940].length)
-      ];
-  } else if (charBirthYear < 1960) {
-    randomName =
-      namesByNationalityAndGender[1950][
-        Math.floor(Math.random() * namesByNationalityAndGender[1950].length)
-      ];
-  } else if (charBirthYear < 1970) {
-    randomName =
-      namesByNationalityAndGender[1960][
-        Math.floor(Math.random() * namesByNationalityAndGender[1960].length)
-      ];
-  } else if (charBirthYear < 1980) {
-    randomName =
-      namesByNationalityAndGender[1970][
-        Math.floor(Math.random() * namesByNationalityAndGender[1970].length)
-      ];
-  } else if (charBirthYear < 1990) {
-    randomName =
-      namesByNationalityAndGender[1980][
-        Math.floor(Math.random() * namesByNationalityAndGender[1980].length)
-      ];
-  } else if (charBirthYear < 2000) {
-    randomName =
-      namesByNationalityAndGender[1990][
-        Math.floor(Math.random() * namesByNationalityAndGender[1990].length)
-      ];
-  } else if (charBirthYear < 2010) {
-    randomName =
-      namesByNationalityAndGender[2000][
-        Math.floor(Math.random() * namesByNationalityAndGender[2000].length)
-      ];
-  } else if (charBirthYear < 2020) {
-    randomName =
-      namesByNationalityAndGender[2010][
-        Math.floor(Math.random() * namesByNationalityAndGender[2010].length)
-      ];
-  }
-
-  return randomName;
-};
+import getBirthYear from "./utils/getBirthYear.js";
+import getNameByDecade from "./utils/getNameByDecade.js";
 
 const getRandomName = () => {
   const { gender } = checkGender();
@@ -134,23 +34,23 @@ const getRandomName = () => {
   switch (charNationality) {
     case "es":
       if (gender === "female") {
-        randomName = getNamesByDecade(namesES.femaleNames);
+        randomName = getNameByDecade(namesES.femaleNames);
       } else if (gender === "male") {
-        randomName = getNamesByDecade(namesES.maleNames);
+        randomName = getNameByDecade(namesES.maleNames);
       }
       break;
     case "nl":
       if (gender === "female") {
-        randomName = getNamesByDecade(namesNL.femaleNames);
+        randomName = getNameByDecade(namesNL.femaleNames);
       } else if (gender === "male") {
-        randomName = getNamesByDecade(namesNL.maleNames);
+        randomName = getNameByDecade(namesNL.maleNames);
       }
       break;
     case "uk":
       if (gender === "female") {
-        randomName = getNamesByDecade(namesUK.femaleNames);
+        randomName = getNameByDecade(namesUK.femaleNames);
       } else if (gender === "male") {
-        randomName = getNamesByDecade(namesUK.maleNames);
+        randomName = getNameByDecade(namesUK.maleNames);
       }
       break;
   }
