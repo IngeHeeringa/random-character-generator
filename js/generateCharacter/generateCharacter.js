@@ -1,31 +1,26 @@
-import {
-  genderInput,
-  lifeStageInput,
-  generateButton,
-  displayCharacter,
-} from "./selectors.js";
-import checkGender from "./utils/checkGender.js";
-import checkLifeStage from "./utils/checkLifeStage.js";
-import getRandomAge from "./utils/getRandomAge.js";
-import getRandomName from "./utils/getRandomName.js";
-import getRandomSurname from "./utils/getRandomSurname.js";
-import getRandomPersonalityType from "./utils/getRandomPersonalityType.js";
-import getRandomStarSign from "./utils/getRandomStarSign.js";
-import getRandomStudies from "./utils/getRandomStudies.js";
-import getRandomJob from "./utils/getRandomJob.js";
-import getRandomSchoolExperience from "./utils/getRandomSchoolExperience.js";
-import getRandomCharacterTraits from "./utils/getRandomCharacterTraits.js";
-import getRandomDream from "./utils/getRandomDream.js";
-import getRandomHobby from "./utils/getRandomHobby.js";
-import getRandomInterests from "./utils/getRandomInterests.js";
-import getRandomFamilyMembers from "./utils/getRandomFamilyMembers.js";
-import getRandomResidence from "./utils/getRandomResidence.js";
-import getRandomAdvice from "./utils/getRandomAdvice.js";
-import Child from "./classes/Child.js";
-import Teenager from "./classes/Teenager.js";
-import YoungAdult from "./classes/YoungAdult.js";
-import Adult from "./classes/Adult.js";
-import Senior from "./classes/Senior.js";
+import { genderInput, lifeStageInput, displayCharacter } from "../selectors.js";
+import checkGender from "../utils/checkGender.js";
+import checkLifeStage from "../utils/checkLifeStage.js";
+import getRandomAge from "../utils/getRandomAge.js";
+import getRandomName from "../utils/getRandomName.js";
+import getRandomSurname from "../utils/getRandomSurname.js";
+import getRandomPersonalityType from "../utils/getRandomPersonalityType.js";
+import getRandomStarSign from "../utils/getRandomStarSign.js";
+import getRandomStudies from "../utils/getRandomStudies.js";
+import getRandomJob from "../utils/getRandomJob.js";
+import getRandomSchoolExperience from "../utils/getRandomSchoolExperience.js";
+import getRandomCharacterTraits from "../utils/getRandomCharacterTraits.js";
+import getRandomDream from "../utils/getRandomDream.js";
+import getRandomHobby from "../utils/getRandomHobby.js";
+import getRandomInterests from "../utils/getRandomInterests.js";
+import getRandomFamilyMembers from "../utils/getRandomFamilyMembers.js";
+import getRandomResidence from "../utils/getRandomResidence.js";
+import getRandomAdvice from "../utils/getRandomAdvice.js";
+import Child from "../classes/Child.js";
+import Teenager from "../classes/Teenager.js";
+import YoungAdult from "../classes/YoungAdult.js";
+import Adult from "../classes/Adult.js";
+import Senior from "../classes/Senior.js";
 
 const generateCharacter = () => {
   const fullName = {
@@ -207,4 +202,4 @@ const generateCharacter = () => {
   displayCharacter.classList.remove("hidden");
 };
 
-generateButton.addEventListener("click", generateCharacter);
+export default generateCharacter;
