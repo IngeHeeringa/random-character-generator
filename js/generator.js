@@ -1,17 +1,10 @@
-import {
-  personalityTypes,
-  traits,
-  dreams,
-  starSigns,
-  advice,
-} from "./database/personality.js";
+import { traits, dreams, starSigns, advice } from "./database/personality.js";
 import { schoolExperience, studies, jobs } from "./database/occupation.js";
 import { hobbies, interests } from "./database/pastimes.js";
 import { familyMembers, residence } from "./database/livingSituation.js";
 import {
   genderInput,
   lifeStageInput,
-  countryInput,
   generateButton,
   displayCharacter,
   displayFullName,
@@ -25,9 +18,7 @@ import getRandomAge from "./utils/getRandomAge.js";
 import getBirthYear from "./utils/getBirthYear.js";
 import getRandomName from "./utils/getRandomName.js";
 import getRandomSurname from "./utils/getRandomSurname.js";
-
-const getRandomPersonalityType = () =>
-  personalityTypes[Math.floor(Math.random() * personalityTypes.length)];
+import getRandomPersonalityType from "./utils/getRandomPersonalityType.js";
 
 const getRandomStarSign = () =>
   starSigns[Math.floor(Math.random() * starSigns.length)];
