@@ -25,12 +25,7 @@ import getRandomSchoolExperience from "./utils/getRandomSchoolExperience.js";
 import getRandomCharacterTraits from "./utils/getRandomCharacterTraits.js";
 import getRandomDream from "./utils/getRandomDream.js";
 import getRandomHobby from "./utils/getRandomHobby.js";
-
-const getModernPastime = (pastime, lifeStage) =>
-  pastime.modern[lifeStage]
-    .concat(pastime.modern.general)
-    .concat(pastime.classic[lifeStage])
-    .concat(pastime.classic.general);
+import getModernPastime from "./utils/getModernPastime.js";
 
 const getRandomInterests = () => {
   const birthYear = getBirthYear();

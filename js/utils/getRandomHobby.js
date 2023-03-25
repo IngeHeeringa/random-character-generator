@@ -1,6 +1,7 @@
 import { hobbies } from "../database/pastimes.js";
 import checkLifeStage from "./checkLifeStage.js";
 import getBirthYear from "./getBirthYear.js";
+import getModernPastime from "./getModernPastime.js";
 
 const getRandomHobby = () => {
   const birthYear = getBirthYear();
