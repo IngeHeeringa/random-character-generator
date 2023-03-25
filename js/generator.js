@@ -1,5 +1,4 @@
 import { traits, dreams, advice } from "./database/personality.js";
-import { schoolExperience } from "./database/occupation.js";
 import { hobbies, interests } from "./database/pastimes.js";
 import { familyMembers, residence } from "./database/livingSituation.js";
 import {
@@ -23,35 +22,7 @@ import getRandomStarSign from "./utils/getRandomStarSign.js";
 import getRandomStudies from "./utils/getRandomStudies.js";
 import getRandomJob from "./utils/getRandomJob.js";
 import getRandomSchoolExperience from "./utils/getRandomSchoolExperience.js";
-
-const getRandomCharacterTraits = () => {
-  const birthYear = getBirthYear();
-  const classicQuirks = traits.quirks.classic;
-  const modernQuirks = traits.quirks.modern.concat(classicQuirks);
-
-  const randomTraits = {
-    virtue: traits.virtues[Math.floor(Math.random() * traits.virtues.length)],
-    weakness:
-      traits.weaknesses[Math.floor(Math.random() * traits.weaknesses.length)],
-    insecurity:
-      traits.insecurities[
-        Math.floor(Math.random() * traits.insecurities.length)
-      ],
-    fear: traits.fears[Math.floor(Math.random() * traits.fears.length)],
-    style: traits.style[Math.floor(Math.random() * traits.style.length)],
-    quirk: "",
-  };
-
-  if (birthYear < 1970) {
-    randomTraits.quirk =
-      classicQuirks[Math.floor(Math.random() * classicQuirks.length)];
-  } else {
-    randomTraits.quirk =
-      modernQuirks[Math.floor(Math.random() * modernQuirks.length)];
-  }
-
-  return randomTraits;
-};
+import getRandomCharacterTraits from "./utils/getRandomCharacterTraits.js";
 
 const getRandomDream = () => dreams[Math.floor(Math.random() * dreams.length)];
 
