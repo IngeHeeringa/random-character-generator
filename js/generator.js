@@ -22,19 +22,7 @@ import {
   displayStarSign,
 } from "./selectors.js";
 import checkGender from "./utils/checkGender.js";
-
-const checkLifeStage = () => {
-  let lifeStage;
-
-  for (const lifeStageButton of lifeStageInput) {
-    if (lifeStageButton.checked) {
-      lifeStage = lifeStageButton.value;
-      break;
-    }
-  }
-
-  return lifeStage;
-};
+import checkLifeStage from "./utils/checkLifeStage.js";
 
 const getAgeRange = () => {
   const lifeStage = checkLifeStage();
