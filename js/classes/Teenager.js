@@ -1,4 +1,5 @@
 import { displayCharacterProfile } from "../selectors.js";
+import Character from "./Character.js";
 
 class Teenager extends Character {
   constructor(
