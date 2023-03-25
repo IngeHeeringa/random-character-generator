@@ -19,9 +19,7 @@ import getBirthYear from "./utils/getBirthYear.js";
 import getRandomName from "./utils/getRandomName.js";
 import getRandomSurname from "./utils/getRandomSurname.js";
 import getRandomPersonalityType from "./utils/getRandomPersonalityType.js";
-
-const getRandomStarSign = () =>
-  starSigns[Math.floor(Math.random() * starSigns.length)];
+import getRandomStarSign from "./utils/getRandomStarSign.js";
 
 const getRandomStudies = () => {
   const classicStudies = studies.classic;
