@@ -1,5 +1,4 @@
 import { advice } from "./database/personality.js";
-import { familyMembers, residence } from "./database/livingSituation.js";
 import {
   genderInput,
   lifeStageInput,
@@ -25,15 +24,7 @@ import getRandomDream from "./utils/getRandomDream.js";
 import getRandomHobby from "./utils/getRandomHobby.js";
 import getRandomInterests from "./utils/getRandomInterests.js";
 import getRandomFamilyMembers from "./utils/getRandomFamilyMembers.js";
-
-const getRandomResidence = () => {
-  const randomAdjective =
-    residence.adjective[Math.floor(Math.random() * residence.adjective.length)];
-  const randomPlace =
-    residence.place[Math.floor(Math.random() * residence.place.length)];
-
-  return `${randomAdjective} ${randomPlace}`;
-};
+import getRandomResidence from "./utils/getRandomResidence.js";
 
 const getRandomAdvice = () => advice[Math.floor(Math.random() * advice.length)];
 
