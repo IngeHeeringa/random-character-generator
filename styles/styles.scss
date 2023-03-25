@@ -1,0 +1,237 @@
+$coral: #ffa69e;
+$aquamarine: #93e1d8;
+$steel: #477998;
+$broken-white: rgb(250, 250, 250);
+$display-font: "Lobster Two", cursive;
+$heading-font: "Josefin Sans", sans-serif;
+$primary-font: "Montserrat", sans-serif;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  text-align: center;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: $broken-white;
+}
+
+header,
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: $display-font;
+  color: $steel;
+}
+
+h3 {
+  font-family: $heading-font;
+}
+
+p,
+a,
+label {
+  font-family: $primary-font;
+}
+
+fieldset {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  border: none;
+}
+
+label {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border: 3px solid $aquamarine;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $steel;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: $aquamarine;
+  color: $broken-white;
+}
+
+select {
+  margin: 0 2rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-family: $primary-font;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  outline-style: none;
+  background-color: $aquamarine;
+  color: $broken-white;
+  cursor: pointer;
+}
+
+.generate-button {
+  width: 100%;
+  padding: 1rem 3rem;
+  border: 5px solid $steel;
+  border-radius: 1rem;
+  font-size: 3rem;
+  font-family: $primary-font;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: $steel;
+  color: $broken-white;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.generate-button__link {
+  margin: 2rem 0;
+}
+
+.title {
+  margin: 1rem 0;
+}
+
+.input-header {
+  margin: 1rem 0;
+  font-size: 3rem;
+  font-family: $heading-font;
+  color: $coral;
+}
+
+.radio-set {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-name {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  font-size: 5rem;
+  font-family: $display-font;
+  text-decoration: underline dashed 6px $aquamarine;
+  color: $coral;
+}
+
+.character-description__title {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  text-decoration: underline solid 4px $aquamarine;
+  color: $coral;
+}
+
+.character-description__text {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 4rem;
+  text-align: justify;
+  color: $steel;
+}
+
+.star-sign__img {
+  width: 20rem;
+  padding: 1rem;
+  user-select: none;
+}
+
+.star-sign__name {
+  font-family: $display-font;
+  font-size: 4rem;
+  margin: 0;
+  color: $coral;
+}
+
+.star-sign__element__keytraits {
+  font-size: 3rem;
+  font-family: $heading-font;
+  color: $aquamarine;
+  padding: 2rem 0;
+}
+
+.star-sign__element__symbol {
+  font-size: 2rem;
+  color: $coral;
+  padding: 0 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  label,
+  select {
+    width: 80%;
+    margin: 1rem 0;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  .select-set {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .full-name {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+
+  .character-description__text {
+    width: 90%;
+  }
+
+  .star-sign__element__keytraits {
+    font-size: 1.9rem;
+  }
+
+  .star-sign__element__symbol {
+    font-size: 1.75rem;
+  }
+}
